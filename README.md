@@ -21,7 +21,7 @@ with TypeScript, integrated with an ASP.NET Core 10 Web API and SQL Server.
 ## Modules Completed
 
 - [x] Module 1 — Project setup with Vite + TypeScript
-- [ ] Module 2 — Components, Props and TypeScript interfaces
+- [x] Module 2 — Components, Props and TypeScript interfaces
 - [ ] Module 3 — Parent → child communication
 - [ ] Module 4 — Local state with useState
 - [ ] Module 5 — Side effects with useEffect
