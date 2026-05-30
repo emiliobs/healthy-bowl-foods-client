@@ -37,3 +37,14 @@ h2{
 .product-status{
   font-size: 0.9rem;
 }
+
+.product-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.messageError{
+  color: red;
+  font-size: 1.2rem;
+}

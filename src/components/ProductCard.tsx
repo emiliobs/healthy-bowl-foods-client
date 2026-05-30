@@ -1,26 +1,27 @@
-import React from 'react';  
+// src/components/ProductCard.tsx
 
-interface Product
-{
-    id: number;
-    name: string;
-    price: number;
-    isAvailable: boolean;
+import React from 'react';
+
+// EN: We no longer define Product here — we import it from the shared types file
+// ES: Ya no definimos Product aquí — lo importamos desde el archivo de tipos compartidos
+// EN: This prevents having duplicate definitions across multiple files
+// ES: Esto evita tener definiciones duplicadas en múltiples archivos
+import type { Product } from '../types/product';
+
+interface ProductCardProps {
+  product: Product;
 }
 
-interface productCardProps
-{
-    product: Product;
-}
-
-const ProductCard: React.FC<productCardProps> = ({ product }) => {
-    return(
-        <div className='product-card'>
-            <h3>{product.name}</h3>
-            <p className='prodcut-price'>£{product.price.toFixed(2)}</p>
-            <p className='prodcut-status'>{product.isAvailable ? 'In stock' : 'Out of stock'}</p>
-        </div>
-    );
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  return (
+    <div className="product-card">
+      <h3>{product.name}</h3>
+      <p className="product-price">£{product.price.toFixed(2)}</p>
+      <span className="product-status">
+        {product.isAvailable ? 'In stock' : 'Out of stock'}
+      </span>
+    </div>
+  );
 };
 
 export default ProductCard;
