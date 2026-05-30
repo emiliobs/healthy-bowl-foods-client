@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Healthy Bowl Foods — Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-grade full-stack learning project built to master React 19 
+with TypeScript, integrated with an ASP.NET Core 10 Web API and SQL Server.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Frontend
+- React 19 + TypeScript
+- Vite 6 (build tool)
+- React Router v7 (navigation)
+- Context API (global state)
+- Fetch API (HTTP client)
 
-## React Compiler
+### Backend
+- ASP.NET Core 10 (REST API)
+- Entity Framework Core 10 (Code-First)
+- SQL Server (database)
+- JWT Authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Modules Completed
 
-## Expanding the ESLint configuration
+- [x] Module 1 — Project setup with Vite + TypeScript
+- [ ] Module 2 — Components, Props and TypeScript interfaces
+- [ ] Module 3 — Parent → child communication
+- [ ] Module 4 — Local state with useState
+- [ ] Module 5 — Side effects with useEffect
+- [ ] Module 6 — Conditional rendering and lists
+- [ ] Module 7 — REST API integration with ASP.NET Core 10
+- [ ] Module 8 — CORS, JWT authentication and protected routes
+- [ ] Module 9 — Navigation with React Router v7
+- [ ] Module 10 — React 19 modern forms with useActionState
+- [ ] Module 11 — Global state with Context API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- Node.js 20+
+- npm 10+
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Clone the repository
+git clone https://github.com/your-username/healthy-bowl-foods-client.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Enter the project folder
+cd healthy-bowl-foods-client
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Install dependencies (equivalent to dotnet restore)
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Start the development server
+npm run dev
+
+# Open in browser
+http://localhost:5173
+
+
+## Project Structure
+
+src/
+├── components/        # Reusable UI components
+├── pages/             # Page-level components (added in Module 9)
+├── context/           # Global state with Context API (added in Module 11)
+├── services/          # API call functions (added in Module 7)
+├── types/             # Shared TypeScript interfaces
+├── App.tsx            # Root component
+├── main.tsx           # Entry point
+└── index.css          # Global styles
+
+## Author
+Emilio — Full-Stack Developer (.NET + React)
+London, UK
