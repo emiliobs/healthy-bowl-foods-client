@@ -21,6 +21,20 @@ const App: React.FC = () => {
     isAvailable: true,
   };
 
+  const testProduct2 ={
+    id:2,
+    name: 'Fresh Ginger Root',
+    price: 12.49,
+    isAvailable: true
+  };
+
+  const testProduct3 = {
+    id:3,
+    name: 'Dried Chía Seeds',
+    price: 12.00,
+    isAvailable: false,
+  };
+
   return (
     <div>
       <header>
@@ -37,7 +51,9 @@ const App: React.FC = () => {
         {/* ES: Pasamos 'testProduct' como la prop 'product'                  */}
         {/* EN: product={testProduct} is how you pass data into a component   */}
         {/* ES: product={testProduct} es cómo pasas datos hacia un componente */}
-        <ProductCard product={testProduct} />
+        <ProductCard product={testProduct}></ProductCard>
+        <ProductCard product={testProduct2}></ProductCard>
+        <ProductCard product={testProduct3}></ProductCard>
 
       </main>
     </div>
