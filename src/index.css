@@ -114,3 +114,27 @@ h2{
   background: #1D9E75;
   cursor: not-allowed;
 }
+
+.loading-sate, .error-state{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.error-state{
+  padding: 0.5rem, 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #2a7a2a;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.error-state button:hover{
+  background: #1e5c1e;
+}
