@@ -1,56 +1,74 @@
-*{
+/* ─── Reset ─────────────────────────────────────── */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: sans-serif;
   padding: 2rem;
+  background: #fafafa;
 }
 
-h1{
-  margin-bottom: 0.5rem;
-
+/* ─── Header ─────────────────────────────────────── */
+.store-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
 }
 
-h2{
-  margin: 1.5rem 0 1rem 0;
+.store-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
 }
 
-.product-card{
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  width: 250px;
-  display: inline-block;
-  margin: 0.5rem;
+.store-header p {
+  color: #666;
+  font-size: 0.95rem;
 }
 
-.product-price{
+.catalog-title {
+  margin-bottom: 1rem;
   font-size: 1.2rem;
-  font-weight: bold;
-  color:#2a7a2a;
-  margin: 0.5rem 0;
+  color: #333;
 }
 
-.product-status{
-  font-size: 0.9rem;
-}
-
-.product-list{
+/* ─── Product list ───────────────────────────────── */
+.product-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.messageError{
-  color: red;
-  font-size: 1.2rem;
+/* ─── Product card ───────────────────────────────── */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-/* EN: Controls container — stacks quantity and button vertically */
-/* ES: Contenedor de controles — apila cantidad y botón verticalmente */
+.product-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2a7a2a;
+  margin-bottom: 0.3rem;
+}
+
+.product-status {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ─── Quantity controls ──────────────────────────── */
 .product-controls {
   margin-top: 1rem;
   display: flex;
@@ -58,8 +76,6 @@ h2{
   gap: 0.5rem;
 }
 
-/* EN: Quantity row — centers the minus, number, plus horizontally */
-/* ES: Fila de cantidad — centra el menos, número, más horizontalmente */
 .quantity-control {
   display: flex;
   align-items: center;
@@ -80,9 +96,7 @@ h2{
   transition: background 0.15s;
 }
 
-.qty-btn:hover {
-  background: #f0f0f0;
-}
+.qty-btn:hover { background: #f0f0f0; }
 
 .qty-value {
   font-size: 15px;
@@ -91,8 +105,6 @@ h2{
   text-align: center;
 }
 
-/* EN: Base style for the Add to cart button */
-/* ES: Estilo base para el botón Add to cart */
 .add-btn {
   padding: 0.5rem 1rem;
   border: none;
@@ -104,37 +116,84 @@ h2{
   transition: background 0.2s;
 }
 
-.add-btn:hover:not(:disabled) {
-  background: #1e5c1e;
-}
+.add-btn:hover:not(:disabled) { background: #1e5c1e; }
 
-/* EN: Style when item is added — gives green confirmation feedback */
-/* ES: Estilo cuando el item es agregado — da retroalimentación verde de confirmación */
 .add-btn--added {
   background: #1D9E75;
   cursor: not-allowed;
 }
 
-.loading-sate, .error-state{
+/* ─── Loading spinner ────────────────────────────── */
+.loading-spinner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   padding: 3rem;
-  font-size: 1rem;
-  color: #555;
+  color: #666;
 }
 
-.error-state{
-  padding: 0.5rem, 1.5rem;
+/* EN: CSS keyframe animation — rotates the spinner 360 degrees continuously */
+/* ES: Animación CSS keyframe — rota el spinner 360 grados continuamente      */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #2a7a2a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ─── Error message ──────────────────────────────── */
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-icon { font-size: 2rem; }
+
+.error-text {
+  color: #c0392b;
+  font-size: 0.95rem;
+}
+
+.retry-btn {
+  padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 6px;
   background: #2a7a2a;
   color: white;
   font-size: 14px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
-.error-state button:hover{
-  background: #1e5c1e;
+.retry-btn:hover { background: #1e5c1e; }
+
+/* ─── Empty state ────────────────────────────────── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+  color: #888;
 }
+
+.empty-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+.empty-state h3 {
+  font-size: 1rem;
+  color: #555;
+}
+
+.empty-state p { font-size: 0.875rem; }
